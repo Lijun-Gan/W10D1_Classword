@@ -2,13 +2,11 @@ import DOMNodeCollection from "./dom_node_collection";
 
 Window.prototype.$l = function(arg){
     let arr;
-    if(arg instanceof HTMLElement){
-         arr = [arg];
-
+    if(arg.includes("<")) {
+        arr = Array.from(document.createElement(arg.slice(1,arg.length-1)));
     }else{
-
         let nodeList = document.querySelectorAll(arg);
-        debugger
+        // debugger
         arr = Array.from(nodeList);
     }
     let domNodes = new DOMNodeCollection(arr);
