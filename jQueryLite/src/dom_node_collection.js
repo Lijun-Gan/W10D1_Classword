@@ -27,8 +27,6 @@ DOMNodeCollection.prototype.append = function (arg) {
             if (arg.constructor.name === "DOMNodeCollection") {
                 for (let i = 0; i < arg.array.length; i++) {
                     const node = arg.array[i];
-                    console.log(this.array[j].constructor.name)
-                    console.log(node.constructor.name)
                     // this.array[j].appendChild(node);
                     this.array[j].innerHTML += node.outerHTML;
                 }
